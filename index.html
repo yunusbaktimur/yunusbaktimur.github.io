@@ -3,43 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yunus Baktimur — Dijital Ürün & Modern Web Çözümleri</title>
-  <meta name="description" content="Kurumsal firmalar ve üreticiler için modern, hızlı ve mobil uyumlu web arayüzleri, dijital ürün katalogları.">
+  <title>Yunus Baktimur — Dijital Ürün, Promosyon B2B & Modern Web Çözümleri</title>
+  <meta name="description" content="Kurumsal firmalar ve promosyon sektörü için canlı tedarikçi API entegrasyonları, modern web arayüzleri ve dijital ürün katalogları.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #09090b;
       --surface: #121215;
       --surface-hover: #18181c;
+      --surface-elevated: #1e1e24;
       --border: rgba(255, 255, 255, 0.08);
       --border-strong: rgba(255, 255, 255, 0.16);
+      --border-accent: rgba(59, 130, 246, 0.35);
       --text: #fafafa;
       --text-muted: #a1a1aa;
       --accent: #2563eb;
+      --accent-light: #60a5fa;
+      --accent-glow: rgba(37, 99, 235, 0.15);
+      --badge-green: rgba(34, 197, 94, 0.12);
+      --badge-green-text: #4ade80;
+      --badge-green-border: rgba(34, 197, 94, 0.25);
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     }
-
     body {
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-
     .container {
       max-width: 1040px;
       margin: 0 auto;
       padding: 0 24px;
     }
-
     /* Navigation */
     header {
       padding: 32px 0;
@@ -48,29 +51,24 @@
       align-items: center;
       border-bottom: 1px solid var(--border);
     }
-
     .brand {
       display: flex;
       flex-direction: column;
     }
-
     .brand-name {
       font-weight: 700;
       font-size: 1.05rem;
       letter-spacing: -0.02em;
     }
-
     .brand-tag {
       font-size: 0.8rem;
       color: var(--text-muted);
     }
-
     .nav-actions {
       display: flex;
       align-items: center;
       gap: 16px;
     }
-
     .btn-contact {
       background-color: #fafafa;
       color: #09090b;
@@ -81,50 +79,67 @@
       font-weight: 600;
       transition: all 0.2s ease;
     }
-
     .btn-contact:hover {
       background-color: #e4e4e7;
+      transform: translateY(-1px);
     }
-
     /* Hero */
     .hero {
       padding: 80px 0 60px;
     }
-
+    .hero-badge-wrap {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
     .hero-label {
-      display: inline-block;
-      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #a1a1aa;
-      margin-bottom: 20px;
+      letter-spacing: 0.08em;
+      color: #93c5fd;
+      background: var(--accent-glow);
+      border: 1px solid var(--border-accent);
+      padding: 6px 14px;
+      border-radius: 100px;
       font-weight: 600;
     }
-
+    .hero-pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #3b82f6;
+      box-shadow: 0 0 8px #3b82f6;
+    }
     .hero h1 {
       font-size: clamp(2.2rem, 5.5vw, 3.8rem);
       font-weight: 700;
       line-height: 1.15;
       letter-spacing: -0.03em;
-      max-width: 820px;
+      max-width: 860px;
       margin-bottom: 24px;
       color: #ffffff;
     }
-
+    .hero h1 span.gradient-text {
+      background: linear-gradient(135deg, #ffffff 30%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     .hero p {
       font-size: 1.15rem;
       color: var(--text-muted);
-      max-width: 640px;
+      max-width: 680px;
       line-height: 1.6;
       margin-bottom: 36px;
     }
-
     .hero-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
     }
-
     .btn-secondary {
       background-color: var(--surface);
       color: var(--text);
@@ -136,12 +151,10 @@
       border: 1px solid var(--border);
       transition: all 0.2s ease;
     }
-
     .btn-secondary:hover {
       background-color: var(--surface-hover);
       border-color: var(--border-strong);
     }
-
     /* Section Headings */
     .section-header {
       margin: 80px 0 32px;
@@ -153,25 +166,21 @@
       flex-wrap: wrap;
       gap: 16px;
     }
-
     .section-header h2 {
       font-size: 1.6rem;
       font-weight: 700;
       letter-spacing: -0.02em;
     }
-
     .section-header span {
       color: var(--text-muted);
       font-size: 0.9rem;
     }
-
     /* Selected Works / Portfolio */
     .works-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 20px;
     }
-
     .work-card {
       background-color: var(--surface);
       border: 1px solid var(--border);
@@ -180,28 +189,35 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
       text-decoration: none;
       color: inherit;
+      position: relative;
     }
-
+    .work-card.featured-card {
+      border-color: rgba(59, 130, 246, 0.3);
+      background: linear-gradient(180deg, rgba(37, 99, 235, 0.04) 0%, var(--surface) 100%);
+    }
     .work-card:hover {
       border-color: var(--border-strong);
       transform: translateY(-3px);
       background-color: var(--surface-hover);
     }
-
+    .work-card.featured-card:hover {
+      border-color: rgba(59, 130, 246, 0.6);
+      box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
+    }
     .work-top {
       margin-bottom: 24px;
     }
-
     .work-meta {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 8px;
     }
-
     .work-category {
       font-size: 0.75rem;
       text-transform: uppercase;
@@ -212,31 +228,62 @@
       border-radius: 6px;
       font-weight: 600;
     }
-
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      color: var(--badge-green-text);
+      background: var(--badge-green);
+      border: 1px solid var(--badge-green-border);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 6px #22c55e;
+    }
     .work-arrow {
       color: var(--text-muted);
       font-size: 1.1rem;
       transition: transform 0.2s ease;
     }
-
     .work-card:hover .work-arrow {
       transform: translate(2px, -2px);
       color: #ffffff;
     }
-
     .work-title {
       font-size: 1.35rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 10px;
     }
-
     .work-desc {
       color: var(--text-muted);
       font-size: 0.92rem;
-      line-height: 1.55;
+      line-height: 1.6;
+      margin-bottom: 16px;
     }
-
+    .work-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .work-chip {
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.04);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 3px 9px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
     .work-url {
       font-size: 0.85rem;
       color: #cbd5e1;
@@ -244,40 +291,96 @@
       padding-top: 18px;
       border-top: 1px solid var(--border);
     }
-
+    /* Promo B2B Special Showcase Banner */
+    .promo-highlight-banner {
+      margin-top: 36px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(18, 18, 21, 0.9) 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 36px 32px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .promo-highlight-banner {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+      }
+    }
+    .promo-banner-text h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+    .promo-banner-text p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .promo-features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .promo-features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: #e2e8f0;
+    }
+    .promo-icon-check {
+      color: #38bdf8;
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
     /* Capabilities / Services */
     .capabilities-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 16px;
     }
-
     .capability-item {
       background-color: var(--surface);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 24px;
+      transition: all 0.2s ease;
     }
-
+    .capability-item:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-2px);
+    }
+    .capability-item.highlight {
+      border-color: var(--border-accent);
+      background: linear-gradient(180deg, rgba(37, 99, 235, 0.08) 0%, var(--surface) 100%);
+    }
     .capability-num {
       font-size: 0.75rem;
       font-weight: 700;
       color: var(--text-muted);
       margin-bottom: 12px;
     }
-
+    .capability-item.highlight .capability-num {
+      color: var(--accent-light);
+    }
     .capability-item h3 {
       font-size: 1.1rem;
       font-weight: 600;
       margin-bottom: 8px;
     }
-
     .capability-item p {
       color: var(--text-muted);
       font-size: 0.875rem;
-      line-height: 1.5;
+      line-height: 1.55;
     }
-
     /* Contact Banner */
     .contact-banner {
       margin: 80px 0;
@@ -291,25 +394,21 @@
       gap: 32px;
       flex-wrap: wrap;
     }
-
     .contact-info h3 {
       font-size: 1.5rem;
       font-weight: 700;
       margin-bottom: 8px;
       letter-spacing: -0.02em;
     }
-
     .contact-info p {
       color: var(--text-muted);
       font-size: 0.95rem;
     }
-
     .contact-links {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
     }
-
     .btn-wa {
       background-color: #25d366;
       color: #000;
@@ -323,11 +422,10 @@
       gap: 8px;
       transition: all 0.2s ease;
     }
-
     .btn-wa:hover {
       background-color: #20ba59;
+      transform: translateY(-1px);
     }
-
     .btn-mail {
       background-color: transparent;
       color: var(--text);
@@ -339,11 +437,10 @@
       border: 1px solid var(--border);
       transition: all 0.2s ease;
     }
-
     .btn-mail:hover {
       background-color: var(--surface-hover);
+      transform: translateY(-1px);
     }
-
     /* Footer */
     footer {
       padding: 40px 0;
@@ -359,61 +456,71 @@
   </style>
 </head>
 <body>
-
   <div class="container">
     <header>
       <div class="brand">
         <span class="brand-name">Yunus Baktimur</span>
-        <span class="brand-tag">Dijital Çözümler & Web Geliştirme</span>
+        <span class="brand-tag">Dijital Çözümler • Promosyon B2B & API Entegrasyonları</span>
       </div>
       <div class="nav-actions">
-        <a href="https://wa.me/905356881928?text=Merhaba%20Yunus%20Bey,%20web%20hizmetleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-contact" target="_blank">
+        <a href="https://wa.me/905356881928?text=Merhaba%20Yunus%20Bey,%20web%20hizmetleriniz%20ve%20API%20entegrasyonu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-contact" target="_blank">
           İletişime Geç
         </a>
       </div>
     </header>
-
     <section class="hero">
-      <span class="hero-label">Kurumsal & Üretici Odaklı Çözümler</span>
-      <h1>İşletmenizin itibarını artıran modern web arayüzleri geliştiriyorum.</h1>
+      <div class="hero-badge-wrap">
+        <span class="hero-label">
+          <span class="hero-pulse"></span>
+          Kurumsal Web & B2B Promosyon Altyapıları
+        </span>
+      </div>
+      <h1>İşletmenizin itibarını artıran <span class="gradient-text">modern web arayüzleri</span> ve <span class="gradient-text">canlı API sistemleri</span> geliştiriyorum.</h1>
       <p>
-        Mevcut sitenizi güncelliyor, ağır katalogları tek tıkla açılan dijital altyapılara dönüştürüyor ve markanızı dijitalde hak ettiği profesyonel görünüme kavuşturuyorum.
+        Mevcut sitenizi güncelliyor, büyük promosyon toptancı ve ithalatçılarından canlı API ile on binlerce ürünü ve anlık stokları sitenize aktarıyor, operasyonel yükünüzü sıfıra indiriyorum.
       </p>
       <div class="hero-actions">
-        <a href="https://wa.me/905356881928?text=Merhaba%20Yunus%20Bey,%20sitemiz%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyoruz." class="btn-contact" target="_blank" style="padding: 13px 24px; font-size: 0.95rem;">
+        <a href="https://wa.me/905356881928?text=Merhaba%20Yunus%20Bey,%20sitemiz%20ve%20promosyon%20API%20entegrasyonu%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyoruz." class="btn-contact" target="_blank" style="padding: 13px 24px; font-size: 0.95rem;">
           WhatsApp ile Doğrudan Ulaşın
         </a>
         <a href="#referanslar" class="btn-secondary">
-          Çalışmaları İnceleyin ↓
+          Çalışmaları & Çözümleri İnceleyin ↓
         </a>
       </div>
     </section>
-
     <!-- Selected Works / Portfolio -->
     <section id="referanslar">
       <div class="section-header">
         <div>
-          <h2>Seçilmiş Çalışmalar</h2>
-          <span>Daha önce hayata geçirilen ve danışmanlık verilen projeler</span>
+          <h2>Seçilmiş Çalışmalar & B2B Çözümleri</h2>
+          <span>Daha önce hayata geçirilen, API entegre edilen ve danışmanlık verilen projeler</span>
         </div>
       </div>
-
       <div class="works-grid">
-        <!-- Site Promosyon -->
-        <a href="https://sitepromosyon.com" target="_blank" class="work-card">
+        <!-- Site Promosyon (Öne Çıkan API Projesi) -->
+        <a href="https://sitepromosyon.com" target="_blank" class="work-card featured-card">
           <div class="work-top">
             <div class="work-meta">
               <span class="work-category">Promosyon & B2B</span>
+              <span class="live-badge">
+                <span class="live-dot"></span>
+                Canlı Tedarikçi API
+              </span>
               <span class="work-arrow">↗</span>
             </div>
             <h3 class="work-title">Site Promosyon</h3>
             <p class="work-desc">
-              Kurumsal promosyon ve hediyelik ürünler için geniş ürün yelpazesini hızlı filtreleme ve modern vitrin deneyimiyle sunan kurumsal altyapı.
+              Büyük ana ithalatçı ve toptancılardan canlı API/servis köprüsüyle 10.000+ promosyonel ürünü, varyantları, anlık stokları ve fiyatları otomatik çeken yüksek performanslı B2B kurumsal altyapı.
             </p>
+            <div class="work-chips">
+              <span class="work-chip">⚡ Canlı Tedarikçi API</span>
+              <span class="work-chip">📦 Otomatik Ürün Çekimi</span>
+              <span class="work-chip">🔄 Anlık Stok Senkronu</span>
+              <span class="work-chip">📈 Kâr Marjı Yönetimi</span>
+            </div>
           </div>
           <div class="work-url">sitepromosyon.com</div>
         </a>
-
         <!-- ERT Global -->
         <a href="https://ertglobal.com.tr" target="_blank" class="work-card">
           <div class="work-top">
@@ -425,10 +532,14 @@
             <p class="work-desc">
               Uluslararası pazarlarda güven veren kurumsal kimlik, çok dilli altyapı ve küresel müşterilere yönelik endüstriyel dış ticaret web sitesi.
             </p>
+            <div class="work-chips">
+              <span class="work-chip">Çok Dilli Altyapı</span>
+              <span class="work-chip">İhracat Odaklı</span>
+              <span class="work-chip">Global SEO</span>
+            </div>
           </div>
           <div class="work-url">ertglobal.com.tr</div>
         </a>
-
         <!-- Zaten Vegan -->
         <a href="https://zatenvegan.com" target="_blank" class="work-card">
           <div class="work-top">
@@ -440,10 +551,14 @@
             <p class="work-desc">
               Kullanıcı deneyimi odaklı, mobil cihazlarda akıcı çalışan ve modern marka dilini yansıtan e-ticaret ve dijital alışveriş platformu.
             </p>
+            <div class="work-chips">
+              <span class="work-chip">E-Ticaret</span>
+              <span class="work-chip">Mobil Deneyim</span>
+              <span class="work-chip">Hızlı Ödeme</span>
+            </div>
           </div>
           <div class="work-url">zatenvegan.com</div>
         </a>
-
         <!-- Nova Ambalaj / B2B Örneği -->
         <div class="work-card">
           <div class="work-top">
@@ -453,14 +568,45 @@
             </div>
             <h3 class="work-title">Nova Ambalaj & Kutu</h3>
             <p class="work-desc">
-              Fuarlar ve B2B müşteriler için ağır basılı broşürler yerine QR kodla saniyeler içinde açılan interaktif dijital ürün kataloğu çözümü.
+              Fuarlar ve B2B müşteriler için basılı broşür maliyetlerini ortadan kaldıran, QR kodla saniyeler içinde açılan interaktif dijital ürün kataloğu.
             </p>
+            <div class="work-chips">
+              <span class="work-chip">QR Menü & Katalog</span>
+              <span class="work-chip">Sıfır Baskı Maliyeti</span>
+              <span class="work-chip">Fuar Çözümü</span>
+            </div>
           </div>
           <div class="work-url">Dijital Katalog Çözümü</div>
         </div>
       </div>
+      <!-- Promosyon Sektörüne Özel Değer Önerisi Banner'ı -->
+      <div class="promo-highlight-banner">
+        <div class="promo-banner-text">
+          <span class="hero-label" style="margin-bottom: 12px;">Promosyon Firmalarına Özel Çözüm</span>
+          <h3>10.000+ Ürünü Elle Girmekle Vakit Kaybetmeyin</h3>
+          <p>
+            Promosyon sektöründeki büyük tedarikçilerin canlı API ve XML servislerini sitenize entegre ediyoruz. Ajanda, termos, kalem, teknoloji ve tekstil ürünleri otomatik olarak sisteminize aktarılır.
+          </p>
+          <a href="https://wa.me/905356881928?text=Merhaba%20Yunus%20Bey,%20promosyon%20tedarik%C3%A7i%20API%20entegrasyonu%20hakk%C4%B1nda%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum." class="btn-contact" target="_blank" style="display: inline-block;">
+            Tedarikçi API Çözümünü Konuşalım →
+          </a>
+        </div>
+        <ul class="promo-features-list">
+          <li>
+            <span class="promo-icon-check">✓</span>
+            <span><strong>Otomatik Ürün & Görsel Aktarımı:</strong> Binlerce ürün başlığı, kategori, renk varyantı ve görseli tek tıkla sitenize yüklenir.</span>
+          </li>
+          <li>
+            <span class="promo-icon-check">✓</span>
+            <span><strong>Anlık Stok & Tükenme Koruması:</strong> Ana toptancıda tükenen ürünler sitenizde otomatik pasifleşir, müşteriye mahcup olmazsınız.</span>
+          </li>
+          <li>
+            <span class="promo-icon-check">✓</span>
+            <span><strong>Otomatik Kâr Marjı & Fiyatlandırma:</strong> Tedarikçi alış fiyatlarının üzerine belirlediğiniz kâr oranları otomatik eklenir, kur değiştiğinde fiyatlar kendiliğinden güncellenir.</span>
+          </li>
+        </ul>
+      </div>
     </section>
-
     <!-- Services / Uzmanlıklar -->
     <section>
       <div class="section-header">
@@ -469,42 +615,47 @@
           <span>İşletmenizin dijital süreçlerinde sunduğumuz ana çözümler</span>
         </div>
       </div>
-
       <div class="capabilities-grid">
-        <div class="capability-item">
-          <div class="capability-num">01</div>
-          <h3>Kurumsal Web Siteleri</h3>
-          <p>Yavaş ve modası geçmiş sitenizi baştan inşa ederek müşterilerinize güven veren modern bir vitrin sunuyoruz.</p>
+        <div class="capability-item highlight">
+          <div class="capability-num">01 / ÖZEL UZMANLIK</div>
+          <h3>Canlı Promosyon & Tedarikçi API Entegrasyonu</h3>
+          <p>Büyük promosyon toptancılarının canlı API/XML servislerini sitenize bağlıyor; on binlerce ürünü, anlık stokları ve fiyatları hiçbir elle girişe gerek kalmadan 7/24 otomatik senkronize ediyoruz.</p>
         </div>
-
         <div class="capability-item">
           <div class="capability-num">02</div>
-          <h3>Dijital QR Ürün Kataloğu</h3>
-          <p>Fuarlarda basılı maliyetleri düşüren, müşterilerinizin telefonla rahatça gezeceği akıllı dijital kataloglar.</p>
+          <h3>Kurumsal Web Siteleri</h3>
+          <p>Yavaş ve modası geçmiş sitenizi baştan inşa ederek müşterilerinize güven veren, kurumsal kimliğinizi yansıtan modern bir vitrin sunuyoruz.</p>
         </div>
-
         <div class="capability-item">
           <div class="capability-num">03</div>
-          <h3>Hız & Mobil Optimizasyon</h3>
-          <p>Mevcut web sitenizin açılış hızını artırıp telefon ekranlarındaki kaymaları ve hataları düzeltiyoruz.</p>
+          <h3>Dijital QR Ürün Kataloğu</h3>
+          <p>Fuarlarda ve müşteri ziyaretlerinde basılı maliyetleri düşüren, müşterilerinizin telefonla rahatça gezeceği akıllı dijital kataloglar.</p>
         </div>
-
         <div class="capability-item">
           <div class="capability-num">04</div>
+          <h3>Hız & Mobil Optimizasyon</h3>
+          <p>Mevcut web sitenizin açılış hızını artırıp telefon ekranlarındaki kaymaları, görsel bozulmaları ve kod hatalarını düzeltiyoruz.</p>
+        </div>
+        <div class="capability-item">
+          <div class="capability-num">05</div>
+          <h3>B2B Filtreleme & Arama Deneyimi</h3>
+          <p>Binlerce ürün arasından müşterilerinizin aradığı promosyon ürününü, renk ve malzeme filtresiyle saniyeler içinde bulmasını sağlayan akıcı mimari.</p>
+        </div>
+        <div class="capability-item">
+          <div class="capability-num">06</div>
           <h3>Google & Yerel Görünürlük</h3>
-          <p>İşletmenizin Google Haritalar kaydı, kurumsal e-posta kurulumları ve aramalarda doğru görünmesi.</p>
+          <p>İşletmenizin Google Haritalar kaydı, kurumsal e-posta kurulumları ve sektör aramalarında doğru ve profesyonel görünmesi.</p>
         </div>
       </div>
     </section>
-
     <!-- Contact Banner -->
     <div class="contact-banner">
       <div class="contact-info">
         <h3>Projenizi Birlikte Konuşalım</h3>
-        <p>Web siteniz veya dijital ürün kataloğunuz için doğrudan iletişime geçebilirsiniz.</p>
+        <p>Web siteniz, promosyon tedarikçi API entegrasyonu veya dijital ürün kataloğunuz için doğrudan iletişime geçebilirsiniz.</p>
       </div>
       <div class="contact-links">
-        <a href="https://wa.me/905356881928?text=Merhaba%20Yunus%20Bey,%20web%20sitemiz%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyoruz." class="btn-wa" target="_blank">
+        <a href="https://wa.me/905356881928?text=Merhaba%20Yunus%20Bey,%20web%20sitemiz%20ve%20API%20entegrasyonu%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyoruz." class="btn-wa" target="_blank">
           WhatsApp: 0535 688 19 28
         </a>
         <a href="mailto:yunus.baktimur09@gmail.com" class="btn-mail">
@@ -512,12 +663,10 @@
         </a>
       </div>
     </div>
-
     <footer>
-      <span>© 2026 Yunus Baktimur — Bağımsız Web Geliştirici & Danışman</span>
+      <span>© 2026 Yunus Baktimur — Bağımsız Web Geliştirici & B2B Entegrasyon Uzmanı</span>
       <span>İstanbul / Türkiye</span>
     </footer>
   </div>
-
 </body>
 </html>
