@@ -3,292 +3,358 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yunus Baktimur | Modern Web Tasarım & Dijital Çözümler</title>
+  <title>Yunus Baktimur — Dijital Ürün & Modern Web Çözümleri</title>
+  <meta name="description" content="Kurumsal firmalar ve üreticiler için modern, hızlı ve mobil uyumlu web arayüzleri, dijital ürün katalogları.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #090d16;
-      --card-bg: rgba(255, 255, 255, 0.03);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --primary: #3b82f6;
-      --primary-glow: rgba(59, 130, 246, 0.35);
-      --accent: #10b981;
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
+      --bg: #09090b;
+      --surface: #121215;
+      --surface-hover: #18181c;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.16);
+      --text: #fafafa;
+      --text-muted: #a1a1aa;
+      --accent: #2563eb;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     body {
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      overflow-x: hidden;
-      background-image: 
-        radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.12) 0%, transparent 40%);
-      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1040px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* Header */
+    /* Navigation */
     header {
-      padding: 24px 0;
+      padding: 32px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--border);
     }
 
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-tag {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .nav-actions {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 16px;
     }
 
-    .logo span {
-      background: linear-gradient(135deg, #60a5fa, #34d399);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .btn-header {
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 99px;
+    .btn-contact {
+      background-color: #fafafa;
+      color: #09090b;
       text-decoration: none;
-      font-size: 0.9rem;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 0.875rem;
       font-weight: 600;
-      border: 1px solid var(--card-border);
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
     }
 
-    .btn-header:hover {
-      background: rgba(255, 255, 255, 0.15);
-      transform: translateY(-2px);
+    .btn-contact:hover {
+      background-color: #e4e4e7;
     }
 
     /* Hero */
     .hero {
-      padding: 70px 0 50px;
-      text-align: center;
+      padding: 80px 0 60px;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      color: #34d399;
-      padding: 6px 16px;
-      border-radius: 99px;
-      font-size: 0.85rem;
+    .hero-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #a1a1aa;
+      margin-bottom: 20px;
       font-weight: 600;
-      margin-bottom: 24px;
-      animation: pulse 2s infinite ease-in-out;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      font-weight: 800;
-      letter-spacing: -1.5px;
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-weight: 700;
       line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(135deg, #93c5fd, #3b82f6, #34d399);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.03em;
+      max-width: 820px;
+      margin-bottom: 24px;
+      color: #ffffff;
     }
 
     .hero p {
-      color: var(--text-muted);
       font-size: 1.15rem;
-      max-width: 650px;
-      margin: 0 auto 36px;
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.6;
+      margin-bottom: 36px;
     }
 
-    .cta-group {
+    .hero-actions {
       display: flex;
-      justify-content: center;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      color: #fff;
-      padding: 15px 30px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      box-shadow: 0 10px 25px var(--primary-glow);
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px var(--primary-glow);
-    }
-
     .btn-secondary {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      color: #fff;
-      padding: 15px 28px;
-      border-radius: 12px;
+      background-color: var(--surface);
+      color: var(--text);
       text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
+      background-color: var(--surface-hover);
+      border-color: var(--border-strong);
     }
 
-    /* Features Grid */
-    .services {
-      padding: 60px 0;
+    /* Section Headings */
+    .section-header {
+      margin: 80px 0 32px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .section-title h2 {
-      font-size: 2rem;
+    .section-header h2 {
+      font-size: 1.6rem;
       font-weight: 700;
-      margin-bottom: 10px;
+      letter-spacing: -0.02em;
     }
 
-    .section-title p {
+    .section-header span {
       color: var(--text-muted);
+      font-size: 0.9rem;
     }
 
-    .grid {
+    /* Selected Works / Portfolio */
+    .works-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 20px;
     }
 
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      padding: 30px;
-      border-radius: 18px;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(59, 130, 246, 0.4);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .card-icon {
-      width: 50px;
-      height: 50px;
+    .work-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 12px;
-      background: rgba(59, 130, 246, 0.1);
+      padding: 28px;
       display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .work-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-3px);
+      background-color: var(--surface-hover);
+    }
+
+    .work-top {
+      margin-bottom: 24px;
+    }
+
+    .work-meta {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-      border: 1px solid rgba(59, 130, 246, 0.2);
+      margin-bottom: 14px;
     }
 
-    .card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
+    .work-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #93c5fd;
+      background: rgba(37, 99, 235, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .work-arrow {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .work-card:hover .work-arrow {
+      transform: translate(2px, -2px);
+      color: #ffffff;
+    }
+
+    .work-title {
+      font-size: 1.35rem;
       font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
     }
 
-    .card p {
+    .work-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .work-url {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      font-weight: 500;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Capabilities / Services */
+    .capabilities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .capability-item {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .capability-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .capability-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .capability-item p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    /* Contact Banner */
+    .contact-banner {
+      margin: 80px 0;
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 44px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-info p {
       color: var(--text-muted);
       font-size: 0.95rem;
-      line-height: 1.6;
     }
 
-    /* Special Offer Box */
-    .offer-box {
-      margin: 60px 0;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(16, 185, 129, 0.15));
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      padding: 40px;
-      border-radius: 24px;
-      text-align: center;
-    }
-
-    .offer-box h3 {
-      font-size: 1.7rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .offer-box p {
-      color: #cbd5e1;
-      max-width: 600px;
-      margin: 0 auto 24px;
-    }
-
-    /* Floating WhatsApp Button */
-    .floating-wa {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: #25d366;
-      color: white;
-      padding: 14px 22px;
-      border-radius: 99px;
-      text-decoration: none;
-      font-weight: 700;
+    .contact-links {
       display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-wa {
+      background-color: #25d366;
+      color: #000;
+      text-decoration: none;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-      z-index: 1000;
-      transition: all 0.3s ease;
+      gap: 8px;
+      transition: all 0.2s ease;
     }
 
-    .floating-wa:hover {
-      transform: scale(1.05);
+    .btn-wa:hover {
+      background-color: #20ba59;
     }
 
+    .btn-mail {
+      background-color: transparent;
+      color: var(--text);
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+
+    .btn-mail:hover {
+      background-color: var(--surface-hover);
+    }
+
+    /* Footer */
     footer {
-      border-top: 1px solid var(--card-border);
       padding: 40px 0;
-      text-align: center;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       color: var(--text-muted);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+      gap: 16px;
     }
   </style>
 </head>
@@ -296,79 +362,162 @@
 
   <div class="container">
     <header>
-      <div class="logo">
-        ⚡ <span>Yunus Baktimur</span>
+      <div class="brand">
+        <span class="brand-name">Yunus Baktimur</span>
+        <span class="brand-tag">Dijital Çözümler & Web Geliştirme</span>
       </div>
-      <a href="https://wa.me/905356881928?text=Merhaba%20Yunus%20Bey,%20web%20hizmetleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-header">
-        İletişime Geç
-      </a>
+      <div class="nav-actions">
+        <a href="https://wa.me/905356881928?text=Merhaba%20Yunus%20Bey,%20web%20hizmetleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-contact" target="_blank">
+          İletişime Geç
+        </a>
+      </div>
     </header>
 
     <section class="hero">
-      <div class="badge">🔥 Fuar Katılımcılarına Özel Çözümler</div>
-      <h1>İşletmenizi Modern Web & <span>Dijital Güçle</span> Büyütün</h1>
+      <span class="hero-label">Kurumsal & Üretici Odaklı Çözümler</span>
+      <h1>İşletmenizin itibarını artıran modern web arayüzleri geliştiriyorum.</h1>
       <p>
-        Telefonda kayan, yavaş açılan veya eski web siteleri potansiyel müşterilerinizi kaçırır. Firmanızı tanıtan modern, hızlı ve satış odaklı web siteleri tasarlıyorum.
+        Mevcut sitenizi güncelliyor, ağır katalogları tek tıkla açılan dijital altyapılara dönüştürüyor ve markanızı dijitalde hak ettiği profesyonel görünüme kavuşturuyorum.
       </p>
-      <div class="cta-group">
-        <a href="https://wa.me/905xxxxxxxxx?text=Merhaba%20Yunus%20Bey,%20fuardaki%20stand%C4%B1n%C4%B1zda%20tan%C4%B1%C5%9Ft%C4%B1k.%20Sitemiz%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyoruz." class="btn-primary">
-          💬 WhatsApp ile Hızlı Teklif Al
+      <div class="hero-actions">
+        <a href="https://wa.me/905356881928?text=Merhaba%20Yunus%20Bey,%20sitemiz%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyoruz." class="btn-contact" target="_blank" style="padding: 13px 24px; font-size: 0.95rem;">
+          WhatsApp ile Doğrudan Ulaşın
         </a>
-        <a href="#hizmetler" class="btn-secondary">
-          Neler Yapıyorum? ↓
+        <a href="#referanslar" class="btn-secondary">
+          Çalışmaları İnceleyin ↓
         </a>
       </div>
     </section>
 
-    <section class="services" id="hizmetler">
-      <div class="section-title">
-        <h2>Hizmetlerimiz</h2>
-        <p>Markanızı dijitalde bir adım öne taşıyacak profesyonel çözümler</p>
+    <!-- Selected Works / Portfolio -->
+    <section id="referanslar">
+      <div class="section-header">
+        <div>
+          <h2>Seçilmiş Çalışmalar</h2>
+          <span>Daha önce hayata geçirilen ve danışmanlık verilen projeler</span>
+        </div>
       </div>
 
-      <div class="grid">
-        <div class="card">
-          <div class="card-icon">💻</div>
-          <h3>Kurumsal Web Sitesi</h3>
-          <p>Şirketinizin prestijini artıran, ürün ve hizmetlerinizi en net şekilde tanıtan ultra hızlı ve mobil uyumlu web siteleri.</p>
+      <div class="works-grid">
+        <!-- Site Promosyon -->
+        <a href="https://sitepromosyon.com" target="_blank" class="work-card">
+          <div class="work-top">
+            <div class="work-meta">
+              <span class="work-category">Promosyon & B2B</span>
+              <span class="work-arrow">↗</span>
+            </div>
+            <h3 class="work-title">Site Promosyon</h3>
+            <p class="work-desc">
+              Kurumsal promosyon ve hediyelik ürünler için geniş ürün yelpazesini hızlı filtreleme ve modern vitrin deneyimiyle sunan kurumsal altyapı.
+            </p>
+          </div>
+          <div class="work-url">sitepromosyon.com</div>
+        </a>
+
+        <!-- ERT Global -->
+        <a href="https://ertglobal.com.tr" target="_blank" class="work-card">
+          <div class="work-top">
+            <div class="work-meta">
+              <span class="work-category">İhracat & Endüstri</span>
+              <span class="work-arrow">↗</span>
+            </div>
+            <h3 class="work-title">ERT Global</h3>
+            <p class="work-desc">
+              Uluslararası pazarlarda güven veren kurumsal kimlik, çok dilli altyapı ve küresel müşterilere yönelik endüstriyel dış ticaret web sitesi.
+            </p>
+          </div>
+          <div class="work-url">ertglobal.com.tr</div>
+        </a>
+
+        <!-- Zaten Vegan -->
+        <a href="https://zatenvegan.com" target="_blank" class="work-card">
+          <div class="work-top">
+            <div class="work-meta">
+              <span class="work-category">E-Ticaret & Tüketici</span>
+              <span class="work-arrow">↗</span>
+            </div>
+            <h3 class="work-title">Zaten Vegan</h3>
+            <p class="work-desc">
+              Kullanıcı deneyimi odaklı, mobil cihazlarda akıcı çalışan ve modern marka dilini yansıtan e-ticaret ve dijital alışveriş platformu.
+            </p>
+          </div>
+          <div class="work-url">zatenvegan.com</div>
+        </a>
+
+        <!-- Nova Ambalaj / B2B Örneği -->
+        <div class="work-card">
+          <div class="work-top">
+            <div class="work-meta">
+              <span class="work-category">Üretim & Katalog</span>
+              <span class="work-arrow">✓</span>
+            </div>
+            <h3 class="work-title">Nova Ambalaj & Kutu</h3>
+            <p class="work-desc">
+              Fuarlar ve B2B müşteriler için ağır basılı broşürler yerine QR kodla saniyeler içinde açılan interaktif dijital ürün kataloğu çözümü.
+            </p>
+          </div>
+          <div class="work-url">Dijital Katalog Çözümü</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Uzmanlıklar -->
+    <section>
+      <div class="section-header">
+        <div>
+          <h2>Hizmet & Uzmanlık Alanları</h2>
+          <span>İşletmenizin dijital süreçlerinde sunduğumuz ana çözümler</span>
+        </div>
+      </div>
+
+      <div class="capabilities-grid">
+        <div class="capability-item">
+          <div class="capability-num">01</div>
+          <h3>Kurumsal Web Siteleri</h3>
+          <p>Yavaş ve modası geçmiş sitenizi baştan inşa ederek müşterilerinize güven veren modern bir vitrin sunuyoruz.</p>
         </div>
 
-        <div class="card">
-          <div class="card-icon">⚡</div>
-          <h3>Web Sitesi Yenileme</h3>
-          <p>Mevcut eski web sitenizi modern tasarımla baştan kuruyor; mobilde takılmadan, ışık hızında açılmasını sağlıyoruz.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">📱</div>
+        <div class="capability-item">
+          <div class="capability-num">02</div>
           <h3>Dijital QR Ürün Kataloğu</h3>
-          <p>Fuarlarda ağır kataloglar yerine; müşterilerinizin telefonla anında inceleyebileceği interaktif dijital kataloglar.</p>
+          <p>Fuarlarda basılı maliyetleri düşüren, müşterilerinizin telefonla rahatça gezeceği akıllı dijital kataloglar.</p>
         </div>
 
-        <div class="card">
-          <div class="card-icon">📍</div>
-          <h3>Google Harita & Görünürlük</h3>
-          <p>Firmanızın Google Haritalar'da doğru görünmesi, müşteri yorumları ve aramalarda üst sıralara çıkması için optimizasyon.</p>
+        <div class="capability-item">
+          <div class="capability-num">03</div>
+          <h3>Hız & Mobil Optimizasyon</h3>
+          <p>Mevcut web sitenizin açılış hızını artırıp telefon ekranlarındaki kaymaları ve hataları düzeltiyoruz.</p>
+        </div>
+
+        <div class="capability-item">
+          <div class="capability-num">04</div>
+          <h3>Google & Yerel Görünürlük</h3>
+          <p>İşletmenizin Google Haritalar kaydı, kurumsal e-posta kurulumları ve aramalarda doğru görünmesi.</p>
         </div>
       </div>
     </section>
 
-    <div class="offer-box">
-      <h3>🚀 Standınıza Özel Ücretsiz Ön İnceleme</h3>
-      <p>Mevcut web sitenizin hız, güvenlik ve mobil uyumluluk analizini fuar katılımcılarına özel <b>tamamen ücretsiz</b> yapıyoruz.</p>
-      <a href="https://wa.me/905356881928?text=Merhaba,%20web%20sitemizin%20%C3%BCcretsiz%20h%C4%B1z%20ve%20mobil%20analizini%20yapt%C4%B1rmak%20istiyoruz." class="btn-primary">
-        Ücretsiz İnceleme Talep Et
-      </a>
+    <!-- Contact Banner -->
+    <div class="contact-banner">
+      <div class="contact-info">
+        <h3>Projenizi Birlikte Konuşalım</h3>
+        <p>Web siteniz veya dijital ürün kataloğunuz için doğrudan iletişime geçebilirsiniz.</p>
+      </div>
+      <div class="contact-links">
+        <a href="https://wa.me/905356881928?text=Merhaba%20Yunus%20Bey,%20web%20sitemiz%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyoruz." class="btn-wa" target="_blank">
+          WhatsApp: 0535 688 19 28
+        </a>
+        <a href="mailto:yunus.baktimur09@gmail.com" class="btn-mail">
+          yunus.baktimur09@gmail.com
+        </a>
+      </div>
     </div>
 
     <footer>
-      <p>© 2026 Yunus Baktimur — Dijital Web Çözümleri. Tüm hakları saklıdır.</p>
+      <span>© 2026 Yunus Baktimur — Bağımsız Web Geliştirici & Danışman</span>
+      <span>İstanbul / Türkiye</span>
     </footer>
   </div>
-
-  <a href="https://wa.me/905356881928?text=Merhaba%20Yunus%20Bey,%20web%20hizmetleriniz%20hakk%C4%B1nda%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum." class="floating-wa" target="_blank">
-    💬 WhatsApp
-  </a>
 
 </body>
 </html>
